@@ -15,9 +15,8 @@
 
 
 <img src="rocket.png" id="rocketbullet" hidden>
-<canvas height="400" id="canvas" tabindex="1" width="600"></canvas>
 
-<input type="button" id="play" value="Replay" onclick="main()">
+<canvas height="400" id="canvas" tabindex="1" width="600"></canvas>
 
 <script>
     let canvas = document.getElementById('canvas');
@@ -38,7 +37,7 @@
     }
 
     // The ship the user controls
-    let ship = makeSquare(10, canvas.height / 2 - 25, 50, 5);
+    let ship = makeSquare(10, canvas.height / 2 - 25, 50, 7);
 
     // Flags to tracked which keys are pressed
     let up = false;
@@ -48,7 +47,7 @@
     // Is a bullet already on the canvas?
     let shooting = false;
     // The bulled shot from the ship
-    let bullet = makeSquare(0, 0, 10, 15);
+    let bullet = makeSquare(0, 0, 10, 50);
 
     // An array for enemies (in case there are more than one)
     let enemies = [];
@@ -83,7 +82,7 @@
     // Track the user's score
     let score = 0;
     // The delay between enemies (in milliseconds)
-    let timeBetweenEnemies = 5 * 1000;
+    let timeBetweenEnemies = 2 * 1000;
     // ID to track the spawn timeout
     let timeoutId = null;
 
@@ -267,12 +266,9 @@
     }
 
     // Start the game
-    function main() {
-        menu();
-        canvas.focus();
-    }
-    main();
+    menu();
+    canvas.focus();
 
-</script>
+    </script>
 </body>
 </html>
